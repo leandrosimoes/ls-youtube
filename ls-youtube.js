@@ -35,18 +35,18 @@
 
             return 'https://img.youtube.com/vi/' + videoId + '/' + index + '.jpg';
         },
-        appendVideo: function(url, locationId, width, height) {
+        appendVideo: function(url, containerId, width, height) {
             if (!ls_youtube.isValidUrl(url)) throw 'url is required';
 
             var videoId = ls_youtube.getVideoId(url),
                 newUrl = 'https://www.youtube.com/embed/' + videoId,
-                location = document.getElementById(locationId);
+                container = document.getElementById(containerId);
 
-            if(!location) {
-                location = document.createElement('div');
-                location.id = 'video-area-' + new Date().getTime();
+            if(!container) {
+                container = document.createElement('div');
+                container.id = 'video-area-' + new Date().getTime();
 
-                document.body.appendChild(location);
+                document.body.appendChild(container);
             }
 
             var iframe = document.createElement('iframe');
@@ -56,7 +56,7 @@
             iframe.src = newUrl;
             iframe.frameBorder = 0;
 
-            location.appendChild(iframe);
+            container.appendChild(iframe);
         }
     };
 

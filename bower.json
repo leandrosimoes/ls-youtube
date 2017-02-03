@@ -1,0 +1,22 @@
+{
+  "name": "ls-youtube",
+  "main": "ls-youtube.js",
+  "homepage": "https://github.com/leandrosimoes/ls-youtube",
+  "authors": [
+    "Leandro Simões <leandro.simoes@outlook.com>"
+  ],
+  "description": "A litle youtube url manipulation lib",
+  "keywords": [
+    "Youtube",
+    "Url",
+    "Manipulation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
