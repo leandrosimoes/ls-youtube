@@ -1,6 +1,6 @@
-﻿"use strict";
-; (function () {
-
+﻿; (function (window, document, commonjs) {
+	"use strict";
+	
     var ls_youtube = {
         isValidUrl: function(url) {
             if (!url) return false;
@@ -59,7 +59,10 @@
             container.appendChild(iframe);
         }
     };
-
-    window.ls_youtube = ls_youtube;
-
-})();
+	
+	if (commonjs) {
+        module.exports = ls_youtube;
+    } else {
+        window.ls_youtube = ls_youtube;
+    }	
+})(window, document, typeof (exports) !== "undefined");
