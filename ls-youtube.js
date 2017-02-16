@@ -16,7 +16,15 @@
         getVideoId: function(url) {
             if (!ls_youtube.isValidUrl(url)) return null;
 
-            var videoId = url.split('v=')[1];
+            var videoId = '';
+
+            if (url.indexOf('youtube') === -1) {
+                var splitedId = url.split('/');
+                videoId = splitedId[splitedId.length - 1] || '';
+            } else {
+                videoId = url.split('v=')[1] || '';
+            }
+
             var ampersandPosition = videoId.indexOf('&');
             if (ampersandPosition != -1) {
                 videoId = videoId.substring(0, ampersandPosition);
